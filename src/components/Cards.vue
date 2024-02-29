@@ -27,9 +27,7 @@
       style="background-color: rgba(0, 0, 0, 0.5)"
     >
       <div class="relative max-h-full">
-        <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow">
-          <!-- Modal header -->
           <div
             class="flex items-center justify-between p-4 md:p-5 border-b rounded-t"
           >
@@ -39,7 +37,7 @@
             <button
               type="button"
               class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
-              @click="showModal = false"
+              @click.stop="showModal = false"
             >
               <svg
                 class="w-3 h-3"
@@ -59,7 +57,6 @@
               <span class="sr-only">Close modal</span>
             </button>
           </div>
-          <!-- Modal body -->
           <div class="p-4 md:p-5 space-y-4">
             <img :src="post.img" alt="image" class="modal-image" />
             <p class="text-base leading-relaxed text-gray-500">
