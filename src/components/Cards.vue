@@ -60,13 +60,13 @@
           <div class="p-4 md:p-5 space-y-4">
             <img :src="post.img" alt="image" class="modal-image" />
             <p class="text-base leading-relaxed text-gray-500">
-              {{ post.content }}
+              File type: {{ post.content }}
             </p>
             <p class="text-base leading-relaxed text-gray-500">
-              {{ post.date }}
+               Submitted by: {{ post.user }}
             </p>
             <p class="text-base leading-relaxed text-gray-500">
-              {{ post.user }}
+              Date: {{ post.date }} 
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default {
 
 <style scoped>
 .modal-image {
-  max-width: 100%;
+ width: 325px;
   height: auto;
 }
 </style>

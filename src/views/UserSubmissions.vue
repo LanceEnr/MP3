@@ -36,19 +36,33 @@ export default {
                     user: "John Doe"
                 },
                 {
-                    title: "Edi wow",
-                    img: "https://www.pdffiller.com/preview/332/872/332872673.png",
+                    title: "Tax Form",
+                    img: "https://juan.tax/wp-content/uploads/2018/06/BIR-Form-1601FQ.jpg",
                     content: "PDF file",
-                    date: "2024-02-26",
-                    user: "John Doe"
+                    date: "2024-02-27",
+                    user: "Jane Smith"
                 },
                 {
-                    title: "Testing 3",
-                    img: "https://www.pdffiller.com/preview/332/872/332872673.png",
+                    title: "Legal Document",
+                    img: "https://signaturely.com/wp-content/uploads/2022/08/non-disclosure-agreement-uplead-791x1024.jpg",
+                    content: "PDF file",
+                    date: "2024-02-28",
+                    user: "Robert Johnson"
+                },
+                {
+                    title: "University Application",
+                    img: "https://image.slidesdocs.com/responsive-images/sheets/university-admission-application-form-excel-template_84d4739a7f__max.jpg    ",
+                    content: "PDF file",
+                    date: "2024-02-29",
+                    user: "Julia Davis"
+                },
+                {
+                    title: "Form 137",
+                    img: "https://cdn.slidesharecdn.com/ss_thumbnails/form137-100630230353-phpapp01-thumbnail.jpg?width=640&height=640&fit=bounds",
                     content: "PDF file",
                     date: "2024-02-26",
-                    user: "John Doe"
-                }
+                    user: "Charlie Brown"
+                },
             ],
             searchQuery: ''
         };
