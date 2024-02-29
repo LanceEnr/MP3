@@ -1,11 +1,9 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Users from './views/Users.vue'
-import UserSubmissions from './views/UserSubmissions.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import Users from '../views/Users.vue'
+import UserSubmissions from '../views/UserSubmissions.vue'
 
-Vue.use(Router)
-
-export default new Router({
+const router = createRouter({
+  history: createWebHistory(),
   routes: [
     {
       path: '/users',
@@ -13,9 +11,11 @@ export default new Router({
       component: Users
     },
     {
-      path: '/user-submissions',
+      path: '/',
       name: 'user-submissions',
       component: UserSubmissions
     }
   ]
 })
+
+export default router

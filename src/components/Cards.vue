@@ -14,6 +14,8 @@
     <div class="p-4 bg-white rounded-b-lg">
       <h4 class="text-l font-semibold">{{ post.title }}</h4>
       <p class="mb-2 leading-normal text-xs">{{ post.content }}</p>
+      <p class="mb-2 leading-normal font-semibold text-xs">{{ post.user }}</p>
+
     </div>
   </div>
 </template>
