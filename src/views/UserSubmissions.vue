@@ -6,27 +6,14 @@
                 <p class="text-neutral-500 text-xl mt-3">
                     For viewing of submissions by different users.
                 </p>
-                <form action="#" method="GET" class="hidden lg:block lg:pl-2">
-                    <label class="sr-only">Search</label>
-                    <div class="relative mt-1 lg:w-72">
-                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                            </svg>
-                        </div>
-                        <input type="text" name="email" id="topbar-search"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-9 p-2.5 "
-                            placeholder="Search" />
-                    </div>
-                </form>
+                <input type="text" v-model="searchQuery" placeholder="Search submissions..." class="mb-4 p-2 border rounded-md" />
             </div>
             <hr class="h-px my-8 border-yellow-500 border-2" />
         </div>
         <div class="grid gap-7 lg:grid-cols-5 p-1 pl-18 relative">
-            <Card v-for="(item, index) in posts" :key="index" :post="item" />
-        </div>
+            <Card v-for="(item, index) in filteredPosts" :key="index" :post="item" />
+            <div v-if="filteredPosts.length === 0" class="text-center text-xl">No Submission Match</div>
+            </div>
     </div>
 </template>
   
@@ -46,10 +33,35 @@ export default {
                     img: "https://www.pdffiller.com/preview/332/872/332872673.png",
                     content: "PDF file",
                     date: "2024-02-26",
-                    user: "John Doe" // Add this line
+                    user: "John Doe"
+                },
+                {
+                    title: "Edi wow",
+                    img: "https://www.pdffiller.com/preview/332/872/332872673.png",
+                    content: "PDF file",
+                    date: "2024-02-26",
+                    user: "John Doe"
+                },
+                {
+                    title: "Testing 3",
+                    img: "https://www.pdffiller.com/preview/332/872/332872673.png",
+                    content: "PDF file",
+                    date: "2024-02-26",
+                    user: "John Doe"
                 }
             ],
+            searchQuery: ''
         };
     },
+    computed: {
+        filteredPosts() {
+            if (!this.searchQuery) {
+                return this.posts;
+            }
+            return this.posts.filter(post =>
+                post.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+            );
+        }
+    }
 };
 </script>
